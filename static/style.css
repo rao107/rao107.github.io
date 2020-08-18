@@ -1,19 +1,53 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  line-height: 1.6em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
 #main-header {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 900;
-  background-color: cornflowerblue;
+  background-color: rgb(104, 86, 133);
+  color: white;
 }
 
 #navbar {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
+  background-color: rgb(54, 25, 61);
 }
 
-li {
+#navbar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar li {
   display: inline;
+  list-style: none;
+}
+
+#navbar a {
+  color: white;
+  text-decoration: none;
+  padding-right: 2%;
 }
 
 #main-footer {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
+  background-color: rgb(54, 25, 61);
+}
+
+#main-footer h3 {
+  text-align: center;
+  margin: 0;
 }

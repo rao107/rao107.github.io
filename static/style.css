@@ -41,6 +41,17 @@ body {
   padding-right: 2%;
 }
 
+#avi {
+  width: 25%;
+  height: auto;
+  float: left;
+}
+
+#about-me {
+  width: 75%;
+  float: right;
+}
+
 #main-footer {
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
@@ -49,5 +60,4 @@ body {
 
 #main-footer h3 {
   text-align: center;
-  margin: 0;
 }

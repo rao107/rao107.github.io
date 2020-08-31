@@ -45,9 +45,31 @@ body {
   width: 25%;
   height: auto;
   float: left;
+  padding: 2%;
 }
 
 #about-me {
-  width: 75%;
+  width: 71%;
   float: right;
+}
+
+.tab {
+  padding-left: 30px;
+}
+
+@media(max-width: 800px) {
+  #avi {
+    width: 100%;
+    float: none;
+  }
+
+  #about-me {
+    width: 100%;
+    float: none;
+  }
+}
+
+#about-me a {
+  text-decoration: none;
+  color: rgb(150, 109, 221);
 }

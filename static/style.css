@@ -51,13 +51,3 @@ body {
   width: 75%;
   float: right;
 }
-
-#main-footer {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
-  background-color: rgb(54, 25, 61);
-}
-
-#main-footer h3 {
-  text-align: center;
-}

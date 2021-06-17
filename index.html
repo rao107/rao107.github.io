@@ -1,49 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet"> 
+
     <title>Anirudh Rao</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet"> 
+    <script src="static/index.js"></script>
   </head>
-  
-  <body>
 
-    <header id="main-header">
-      <div class="container">
-        <h1>Anirudh Rao</h1>
-      </div>
-    </header>
-
-    <nav id="navbar">
-      <div class="container">
-        <ul>
-          <li><a href="https://github.com/rao107" target="_blank" rel="noopener noreferrer">Github</a></li>
-          <li><a href="https://www.linkedin.com/in/anirudh-rao-4137571b4" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
-          <li><a href="mailto:rao107@purdue.edu">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
-      <img src="static/avi.jpg" id="avi" alt="It's me!">
-      <aside id="about-me">
-        <div class="container">
-          <h1>Welcome!</h1>
-          <span class="tab"></span>I'm a student currently studying Computer Science and Data Science in Purdue University. I was born and raised in the Bay Area. I really, really, really like puzzles. If you happen to attend Purdue, come join the <a href="https://boilerlink.purdue.edu/organization/purduecubingclub" target="_blank" rel="noopener noreferrer">Puzzle Club!</a> It's a great place to find some neat puzzles.
-          <br>
-          <br>
-          <span class="tab"></span>I'm also super interested in open source projects and I'm always looking for really cool repositories to contribute to. Nothing makes me happier than knowing that my code is helping other people around the world. Check out my <a href="https://github.com/rao107" target="_blank" rel="noopener noreferrer">Github</a> to see what projects I've been contributing to.
-          <br>
-          <br>
-          <span class="tab"></span>Feel free to get in touch with me via <a href="mailto:rao107@purdue.edu">e-mail</a> or connect with <a href="https://www.linkedin.com/in/anirudh-rao-4137571b4" target="_blank" rel="noopener noreferrer">Linkedin!</a>
-          <br>
-          <span class="tab"></span>
-        </div>
-      </aside>
+  <body onload="bgPos()">
+    <div class="greeting">
+      <h1>Hello! 👋</h1>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item"><a href="about.html">ABOUT</a></li>
+        <li class="list-group-item"><a href="mailto:rao107@purdue.edu">CONTACT</a></li>
+        <li class="list-group-item"><a href="https://github.com/rao107">GITHUB</a></li>
+      </ul>
     </div>
 
   </body>
+
+  <!-- you found the secret dolphin 🐬 (it's a secret shh) -->
+
 </html>

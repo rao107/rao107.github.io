@@ -1,75 +1,40 @@
 body {
-  margin: 0;
-  background-color: rgb(7, 7, 37);
-  color: white;
-  line-height: 1.6em;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  background-color: #98d1e2;
+  background-image: url("./concrete-wall.png");
 
-.container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-}
-
-#main-header {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 900;
-  background-color: rgb(77, 55, 114);
   color: white;
 }
 
-#navbar {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
-  background-color: rgb(54, 25, 61);
+.greeting {
+  display: grid;
+  place-items: center;
+  padding-top: 40vmin;
 }
 
-#navbar ul {
-  margin: 0;
-  padding: 0;
+.list-group-item {
+  background-color: unset;
+  border: none;
+  text-align: center;
 }
 
-#navbar li {
-  display: inline;
-  list-style: none;
-}
-
-#navbar a {
-  color: white;
+a {
   text-decoration: none;
-  padding-right: 2%;
+  color: white;
+}
+
+a:hover {
+  color: #232657;
+}
+
+.clearfix {
+  padding-left: 25vmin;
+  padding-right: 25vmin;
+  padding-top: 25vmin;
 }
 
 #avi {
-  width: 25%;
-  height: auto;
-  float: left;
-  padding: 2%;
-}
-
-#about-me {
-  width: 71%;
-  float: right;
-}
-
-.tab {
-  padding-left: 30px;
-}
-
-@media screen and (max-width: 800px) {
-  #avi {
-    width: 100%;
-    float: none;
-  }
-
-  #about-me {
-    width: 100%;
-    float: none;
-  }
-}
-
-#about-me a {
-  text-decoration: none;
-  color: rgb(150, 109, 221);
+  max-width: 100%;
+  margin-right: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem grey;
 }

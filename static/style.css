@@ -28,9 +28,9 @@ a:hover {
 }
 
 .clearfix {
-  padding-left: 25vmin;
-  padding-right: 25vmin;
-  padding-top: 25vmin;
+  margin-left: 25vmin;
+  margin-right: 25vmin;
+  margin-top: 25vmin;
 }
 
 #avi {

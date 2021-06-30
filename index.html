@@ -18,7 +18,7 @@
     <script src="static/index.js"></script>
   </head>
 
-  <body onload="bgPos()">
+  <body onload="bgToggle()">
     <div class="greeting">
       <h1>Hello! 👋</h1>
       <ul class="list-group list-group-horizontal">
@@ -27,6 +27,8 @@
         <li class="list-group-item"><a href="https://github.com/rao107">GITHUB</a></li>
       </ul>
     </div>
+
+    <input id="bg-toggle" type="button" value="Toggle Background" onclick="bgToggle()">
 
   </body>
 

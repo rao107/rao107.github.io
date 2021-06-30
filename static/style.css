@@ -27,6 +27,23 @@ a:hover {
   color: #232657;
 }
 
+#bg-toggle {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+
+  opacity: 0.5;
+  color: #c988c0;
+  background-color: #302444;
+  border-style: none;
+  border-radius: 5px;
+}
+
+#bg-toggle:hover {
+  opacity: 1;
+}
+
 .clearfix {
   margin-left: 25vmin;
   margin-right: 25vmin;

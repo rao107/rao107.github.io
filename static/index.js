@@ -1,14 +1,21 @@
-let backgroundX = 0;
-let backgroundY = 0;
+let bgX = 0;
+let bgY = 0;
 
 bgPos = () => {
-    backgroundX += (Math.random() * 75 + 25);
-    backgroundX %= 100;
-    backgroundY += (Math.random() * 75 + 25);
-    backgroundY %= 100;
+    bgX = (Math.random() * 75 + 25 + bgX) % 100;
+    bgY = (Math.random() * 75 + 25 + bgY) % 100;
 
-    document.body.style.setProperty("background-position-x", String(backgroundX) + "%");
-    document.body.style.setProperty("background-position-y", String(backgroundY) + "%");
+    document.body.style.setProperty("background-position-x", String(bgX) + "%");
+    document.body.style.setProperty("background-position-y", String(bgY) + "%");
 }
 
-setInterval(bgPos, 1000);
+let bgAnim = null;
+
+bgToggle = () => {
+    if (bgAnim) {
+        clearInterval(x);
+    } else {
+        x = setInterval(bgPos, 1000);
+    }
+    bgAnim = !bgAnim;
+}

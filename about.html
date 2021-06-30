@@ -18,7 +18,7 @@
     <script src="static/index.js"></script>
   </head>
 
-  <body onload="bgPos()">
+  <body onload="bgToggle()">
 
     <div class="clearfix">
       <img src="static/avi.jpg" class="col-md-3 float-md-start mb-3 ms-md-3 rounded-3" alt="My face" id="avi">
@@ -45,6 +45,8 @@
 
       <a href="index.html"><h3>BACK</h3></a>
     </div>
+
+    <input id="bg-toggle" type="button" value="Toggle Background" onclick="bgToggle()">
 
   </body>
 </html>

@@ -3,19 +3,41 @@ body {
     background-image: url("./concrete-wall.png");
 
     font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     color: white;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
 .greeting {
     display: grid;
     place-items: center;
-    padding-top: 40vmin;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 90vh;
+}
+
+.list-group.list-group-horizontal {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
 }
 
 .list-group-item {
     background-color: unset;
     border: none;
     text-align: center;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 a {
@@ -33,6 +55,9 @@ a:hover {
     position: fixed;
     bottom: 0;
 
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     opacity: 0.5;
     color: #c988c0;
     background-color: #302444;
@@ -51,7 +76,10 @@ a:hover {
 }
 
 #avi {
-    max-width: 100%;
+    width: 25%;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
     margin-right: 1rem;
+    float: left;
     box-shadow: 0.5rem 0.5rem 0.5rem grey;
 }

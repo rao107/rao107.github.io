@@ -3,19 +3,36 @@ body {
     background-image: url("./concrete-wall.png");
 
     font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     color: white;
 }
 
 .greeting {
     display: grid;
     place-items: center;
-    padding-top: 40vmin;
+}
+
+.centerpls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 90vh;
+}
+
+.list-group.list-group-horizontal {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
 }
 
 .list-group-item {
     background-color: unset;
     border: none;
     text-align: center;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 a {
@@ -33,6 +50,9 @@ a:hover {
     position: fixed;
     bottom: 0;
 
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     opacity: 0.5;
     color: #c988c0;
     background-color: #302444;

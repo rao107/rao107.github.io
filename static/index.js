@@ -1,7 +1,7 @@
 let bgX = 0;
 let bgY = 0;
 
-bgPos = () => {
+function bgPos() {
     bgX = (Math.random() * 75 + 25 + bgX) % 100;
     bgY = (Math.random() * 75 + 25 + bgY) % 100;
 
@@ -9,13 +9,21 @@ bgPos = () => {
     document.body.style.setProperty("background-position-y", String(bgY) + "%");
 }
 
-let bgAnim = null;
+let bgAnim = document.cookie === "" || document.cookie.includes("bgAnim=1");
 
-bgToggle = () => {
+function bgStart() {
+    if (bgAnim) {
+        x = setInterval(bgPos, 1000);
+    }
+}
+
+function bgToggle() {
     if (bgAnim) {
         clearInterval(x);
+        document.cookie = "bgAnim=0; samesite=lax; secure";
     } else {
         x = setInterval(bgPos, 1000);
+        document.cookie = "bgAnim=1; samesite=lax; secure";
     }
     bgAnim = !bgAnim;
 }

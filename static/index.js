@@ -14,6 +14,8 @@ let bgAnim = document.cookie === "" || document.cookie.includes("bgAnim=1");
 function bgStart() {
     if (bgAnim) {
         x = setInterval(bgPos, 1000);
+    } else {
+        bgPos();
     }
 }
 

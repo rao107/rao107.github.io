@@ -1,5 +1,6 @@
 let bgX = 0;
 let bgY = 0;
+let interval = 0;
 
 function bgPos() {
     bgX = (Math.random() * 75 + 25 + bgX) % 100;
@@ -13,7 +14,7 @@ let bgAnim = document.cookie === "" || document.cookie.includes("bgAnim=1");
 
 function bgStart() {
     if (bgAnim) {
-        x = setInterval(bgPos, 1000);
+        interval = setInterval(bgPos, 1000);
     } else {
         bgPos();
     }
@@ -21,10 +22,10 @@ function bgStart() {
 
 function bgToggle() {
     if (bgAnim) {
-        clearInterval(x);
+        clearInterval(interval);
         document.cookie = "bgAnim=0; samesite=lax; secure";
     } else {
-        x = setInterval(bgPos, 1000);
+        interval = setInterval(bgPos, 1000);
         document.cookie = "bgAnim=1; samesite=lax; secure";
     }
     bgAnim = !bgAnim;

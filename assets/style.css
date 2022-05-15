@@ -1,0 +1,70 @@
+body {
+    background-color: #98d1e2;
+    background-image: url("./concrete-wall.png");
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: rgb(75, 73, 110);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.greeting {
+    display: grid;
+    place-items: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 90vh;
+}
+
+.list-group.list-group-horizontal {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+}
+
+.list-group-item {
+    background-color: unset;
+    border: none;
+    text-align: center;
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(75, 73, 110);
+}
+
+a:hover {
+    color: #232657;
+}
+
+#bg-toggle {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    opacity: 0.5;
+    color: #c988c0;
+    background-color: #302444;
+    border-style: none;
+    border-radius: 5px;
+}
+
+#bg-toggle:hover {
+    opacity: 1;
+}

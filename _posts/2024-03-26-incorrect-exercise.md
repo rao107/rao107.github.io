@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Incorrect Exercise in Introduction to Topology by Bert Mendelson"
+title:  "Proving an exercise wrong"
 date:   2024-03-26 07:07:30 -0700
 category: blog
 tags: "set theory" topology lean

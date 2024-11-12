@@ -1,13 +1,26 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
   return (
-    <div>
-      <h1>About</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus placeat modi. Suscipit quas magnam quam dolorum assumenda inventore. Blanditiis assumenda quia consectetur iure tenetur laudantium repellendus nesciunt, velit autem.
-      </p>
-      <Link href='/'>Back</Link>
+    <div className="flex flex-row">
+      <div className="basis-1/3 bg-slate-300">
+        <h1 className="text-5xl">About</h1>
+        <Link href='/'>Back</Link>
+      </div>
+      <div className="basis-1/3 bg-slate-500">
+        <Image
+          src="/pfp.jpg"
+          alt="Photo of Anirudh"
+          className="rounded-full"
+          width={100}
+          height={100}
+        />
+      </div>
+      <div className="basis-1/3 bg-slate-700">
+        <h1 className="text-5xl">About</h1>
+        <Link href='/'>Back</Link>
+      </div>
     </div>
   );
 }

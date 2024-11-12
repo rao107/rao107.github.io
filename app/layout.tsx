@@ -17,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={bodoni_moda.className}>
-        <main className="grid place-items-center absolute inset-0 sm:m-4 md:m-8 lg:m-16 xl:m-32
-          2xl:m-64 bg-[url('../public/paper-texture.jpg')] bg-center bg-cover"
+        <div className="grid content-center">
+
+        </div>
+        <main className="place-self-center w-1/2 aspect-[7/4]
+          bg-[url('../public/paper-texture.jpg')] bg-center bg-cover"
         >
           {children}
         </main>

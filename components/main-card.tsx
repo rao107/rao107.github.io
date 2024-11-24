@@ -17,8 +17,8 @@ export default function MainCard({
     }
     const {x, y, width, height} = card_rect;
     root.addEventListener("mousemove", (e) => {
-      root.style.setProperty('--shadow-x', (e.clientX - x - width / 2) / root_rect.width * 14 + 'px');
-      root.style.setProperty('--shadow-y', (e.clientY - y - height / 2) / root_rect.height * 14 + 'px');
+      root.style.setProperty('--shadow-x', -(e.clientX - x - width / 2) / root_rect.width * 14 + 'px');
+      root.style.setProperty('--shadow-y', -(e.clientY - y - height / 2) / root_rect.height * 14 + 'px');
     });
   }, []);
 

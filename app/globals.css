@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --shadow-x: 0;
+  --shadow-y: 0;
+}
+
+.pfp {
+  float: right;
+  shape-outside: circle(50%);
+}
+
+.shadow-effect {
+  filter: drop-shadow(var(--shadow-x) var(--shadow-y) 14px dimgray)
+}
+
+* {
+  scrollbar-width: none;
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {

@@ -10,7 +10,7 @@ export default function Home() {
           <ul className="flex justify-between">
             <Link href="about">About</Link>
             <Link href="blog">Blog</Link>
-            <Link href="projects">Projects</Link>
+            <Link href="https://github.com/rao107">Github</Link>
             <Link href="mailto:proanirudhrao@gmail.com">Contact</Link>
           </ul>
         </div>

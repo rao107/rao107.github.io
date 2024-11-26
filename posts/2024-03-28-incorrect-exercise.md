@@ -1,15 +1,12 @@
 ---
-title: "Possibly Incorrect Exercise"
+title: "Finding mistakes using Lean"
 date:  2024-03-28 18:44:54
 ---
 
 ### This blog post may have been changed since its original publication during a blog migration.
 <br/>
 
-Adding this note here while migrating my blog because I realized I don't like this post and it's not my best work.
-
-TL;DR: The definition of a set's complement in Mendelson's book was defined differently than the definition found in Mathlib causing headaches and pain. Below is how I found out about the apparent mistake and the steps to find its source.
-<br/>
+*TL;DR:* The definition of a set's complement in Mendelson's book was defined differently than the definition found in Mathlib causing headaches and pain. Below is how I found out about the apparent mistake and the steps to find its source.
 <br/>
 
 I picked up a book on topology called ["Introduction to Topology" by Bert Mendelson](https://archive.org/details/introduction-to-topology-by-mendelson-bert/), and it seems to ask me to prove something that isn't always true?

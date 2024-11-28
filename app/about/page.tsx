@@ -6,11 +6,11 @@ export default function Page() {
   return (
     <MainCard>
       <div className="w-full h-full">
-        <div className="absolute inset-y-4 left-4">
+        <div className="absolute inset-y-8 left-8">
           <h1 className="text-5xl">About</h1>
           <Link href='/'>Back</Link>
         </div>
-        <div className="absolute inset-y-4 right-4 w-1/2 overflow-y-scroll">
+        <div className="absolute inset-y-8 right-8 w-1/2 overflow-y-scroll">
           <p className="">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat tempora voluptate suscipit sapiente. Assumenda consequuntur, nisi vero quia esse vel incidunt natus dolores sapiente nostrum? Aut pariatur repellat quam?
           </p>

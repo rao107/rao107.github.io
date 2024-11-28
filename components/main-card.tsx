@@ -25,7 +25,7 @@ export default function MainCard({
   return (
     <div id="main-card" className="grid justify-items-center relative aspect-[7/4] w-1/2
       bg-[url('../public/paper-texture.jpg')] bg-center bg-cover
-      shadow-effect"
+      drop-shadow-[var(--shadow-x)_var(--shadow-y)_14px_dimgray]"
     >
       {children}
     </div>

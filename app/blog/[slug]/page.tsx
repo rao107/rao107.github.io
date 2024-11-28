@@ -18,11 +18,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   }
   return (
     <div className="w-full h-full px-8">
-      <div className="w-full h-full bg-[url('../public/paper-texture.jpg')] bg-center bg-cover p-4 space-y-4">
+      <div className="w-full h-full bg-[url('../public/paper-texture.jpg')] bg-center bg-cover p-12 space-y-8 drop-shadow-[0_0_14px_dimgray]">
         <div className="space-y-2">
           <h1 className="text-5xl">{post.title}</h1>
           <h2 className="text-3xl">{post.date.format('MMMM D, YYYY')}</h2>
-          <Link href='/blog' className="underline decoration-2 decoration-blue-500">back to blog</Link>
+          <Link href='/blog' className="">back to blog</Link>
         </div>
         <Markdown
           className="*:indent-8 space-y-2 leading-relaxed font-sans"

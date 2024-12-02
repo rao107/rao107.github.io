@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Noto_Serif } from "next/font/google";
 import Markdown from 'markdown-to-jsx';
-import { Date, NavBack, Text, Title } from "@/components";
+import { Attribution, Date, NavBack, Text, Title } from "@/components";
 import posts from "@/utils/blogutils";
 import NotFound from './not-found';
 import Section from "@/components/blog/section";
@@ -61,6 +61,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         >
           {post.content}
         </Markdown>
+        <Attribution />
       </div>
     </div>
   );

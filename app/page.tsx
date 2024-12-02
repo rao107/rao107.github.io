@@ -1,4 +1,4 @@
-import MainCard from "@/components/main-card";
+import { MainCard } from "@/components";
 import Link from "next/link";
 
 export default function Home() {

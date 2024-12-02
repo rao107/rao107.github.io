@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from "react";
+import Attribution from "./attribution";
 
 export default function MainCard({
   children,
@@ -23,6 +24,7 @@ export default function MainCard({
   }, []);
 
   return (
+    <>
     <div
       id="main-card"
       className="@container grid justify-items-center relative aspect-7/4 w-full sm:w-1/2
@@ -31,5 +33,7 @@ export default function MainCard({
     >
       {children}
     </div>
+    <Attribution />
+    </>
   );
 }

@@ -1,8 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Noto_Serif } from "next/font/google";
 import Markdown from 'markdown-to-jsx';
+import { Date, NavBack, Text, Title } from "@/components";
 import posts from "@/utils/blogutils";
 import NotFound from './not-found';
-import Image from "next/image";
+import Section from "@/components/blog/section";
+
+const font = Noto_Serif({ weight: "400", subsets: ['latin']});
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
@@ -17,21 +22,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return NotFound();
   }
   return (
-    <div className="w-full h-full px-8">
-      <div className="w-full h-full bg-[url('../public/paper-texture.jpg')] bg-center bg-cover p-12 space-y-8 drop-shadow-[0_0_14px_dimgray]">
+    <div className="w-full h-full px-0 sm:px-8">
+      <div className="w-full h-full bg-[url('../public/paper-texture.avif')] bg-center bg-cover py-12 px-4 sm:px-8 space-y-8 drop-shadow-[0_0_14px_dimgray]">
         <div className="space-y-2">
-          <h1 className="text-5xl">{post.title}</h1>
-          <h2 className="text-3xl">{post.date.format('MMMM D, YYYY')}</h2>
-          <Link href='/blog' className="">back to blog</Link>
+          <Title>{post.title}</Title>
+          <Date date={post.date} />
+          <NavBack href="/blog">back to blog</NavBack>
         </div>
         <Markdown
-          className="*:indent-8 space-y-2 leading-relaxed font-sans"
+          className={`space-y-2 leading-relaxed ${font.className}`}
           options={{
             overrides: {
               a: {
                 component: Link,
                 props: {
-                  className: "text-blue-500"
+                  className: "text-blue-500 underline decoration-1"
                 },
               },
               img: {
@@ -40,6 +45,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   width: 500,
                   height: 500,
                   className: "w-1/2",
+                },
+              },
+              h1: {
+                component: Section,
+              },
+              p: {
+                component: Text,
+                props: {
+                  indent: true,
                 },
               },
             },

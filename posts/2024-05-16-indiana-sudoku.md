@@ -11,11 +11,11 @@ thumbnail: "indiana-sudoku-1.png"
 
 <a href="/indiana-sudoku-1.png"><img src="/indiana-sudoku-1.png" alt="Puzzle"></a>
 
-### Rules:
+# Rules:
 
 Classic Sudoku rules. In addition, the first 25 digits of pi must be in the Indiana border and the first 9 digits of pi must be in the positive and negative diagonals.
 
-### Background:
+# Background:
 
 This sudoku is inspired by the [Indiana pi bill](https://en.wikipedia.org/wiki/Indiana_pi_bill), a piece of legislature "establishing" a proof of the impossible "squaring the circle" problem. Amongst the many math errors, the proof incorrectly asserts that pi is equal to 3. As a result, I thought it would be nice to start with the border of Indiana and try to string the digits of pi around it. When I could not do it consecutively, I relaxed the consecutive constraint and added a 3 in the center. With some more bits of interesting logic and clues, I created this sudoku.
 

@@ -1,20 +1,29 @@
-import { MainCard } from "@/components";
-import Link from "next/link";
+import Image from "next/image";
+import { Header } from "@/components";
+import Navigation from "@/components/Navigation";
 
 export default function Home() {
   return (
-    <MainCard>
-      <div className="flex flex-col justify-center absolute inset-0">
-        <div className="w-min self-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-8xl 2xl:text-9xl">Anirudh&nbsp;Rao</h1>
-          <ul className="flex justify-between *:text-xs sm:*:text-sm md:*:text-sm lg:*:text-xl xl:*:text-4xl 2xl:*:text-5xl">
-            <li><Link href="about">About</Link></li>
-            <li><Link href="blog">Blog</Link></li>
-            <li><Link href="https://github.com/rao107">Github</Link></li>
-            <li><Link href="mailto:proanirudhrao@gmail.com">Contact</Link></li>
-          </ul>
-        </div>
+    <div className="flex flex-row items-center justify-center h-full w-full">
+      <div className="flex items-center justify-center w-1/2 h-1/2 border-r-1 border-r-black">
+        <Image
+          src="/pfp.jpg"
+          alt="Photo of Anirudh (me)"
+          className="rounded-full aspect-square w-1/2"
+          width={500}
+          height={500}
+        />
       </div>
-    </MainCard>
+      <div className="flex flex-col justify-between pl-4 w-1/2 h-1/2 border-l-1 border-l-black">
+        <Header title="Anirudh Rao" />
+        <Navigation links={
+          [
+            { label: "About", href: "/about" },
+            { label: "Github", href: "https://github.com/rao107" },
+            { label: "Contact", href: "mailto:proanirudhrao@gmail.com" },
+          ]
+        } />
+      </div>
+    </div>
   );
 }

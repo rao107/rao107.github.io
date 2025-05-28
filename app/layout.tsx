@@ -30,7 +30,7 @@ export default function RootLayout({
               className="w-full h-full bg-[url('../public/cardboard.png')] bg-center bg-cover
               dark:invert"
             >
-              <div className="w-full h-full dark:invert dark:text-neutral-300">
+              <div className="flex items-center w-full h-full dark:invert dark:text-neutral-300">
                 {children}
               </div>
             </div>

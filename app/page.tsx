@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 
 export default function Home() {
   return (
-    <div className="flex flex-row items-center justify-center h-full w-full">
+    <div className="flex flex-row items-center justify-center h-1/2 sm:h-full w-full">
       <div className="flex items-center justify-center w-1/2 h-1/2 border-r-1 border-r-black">
         <Image
           src="/pfp.jpg"

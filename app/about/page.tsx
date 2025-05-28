@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 
 export default function Page() {
   return (
-    <div className="flex flex-row items-center justify-center h-full w-full">
+    <div className="flex flex-row items-center justify-center h-1/2 sm:h-full w-full">
       <div className="flex px-4 w-1/2 h-1/2 border-r-1 border-r-black overflow-y-auto
         max-sm:text-lg sm:text-lg xl:text-xl 2xl:text-3xl
         leading-7 xl:leading-8 2xl:leading-12"

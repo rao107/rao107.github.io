@@ -2,8 +2,9 @@
 
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import { Suspense } from "react";
 
-export default function ImageViewer() {
+function ImageViewerContent() {
   const searchParams = useSearchParams();
   let imagePath = searchParams.get("path");
   const filename = searchParams.get("filename");
@@ -30,5 +31,17 @@ export default function ImageViewer() {
         className="object-contain"
       />
     </div>
+  );
+}
+
+export default function ImageViewer() {
+  return (
+    <Suspense fallback={
+      <div className="h-screen w-screen bg-slate-900 flex items-center justify-center">
+        <p className="text-slate-400">Loading...</p>
+      </div>
+    }>
+      <ImageViewerContent />
+    </Suspense>
   );
 }

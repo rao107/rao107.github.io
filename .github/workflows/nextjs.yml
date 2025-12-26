@@ -72,9 +72,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }} --legacy-peer-deps
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: |
+          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "yarn" ]; then
+            # yarn: use standard install (no npm-only flags)
+            yarn install
+          else
+            # npm: use ci and keep --legacy-peer-deps if needed
+            npm ci --legacy-peer-deps
+          fi
+      - name: Build (run package-manager script so lifecycle hooks run)
+        run: |
+          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "yarn" ]; then
+            yarn build
+          else
+            npm run build
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

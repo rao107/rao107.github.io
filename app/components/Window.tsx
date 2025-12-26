@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 interface WindowProps {
-  src?: string;
-  children?: React.ReactNode;
+  src: string;
   className?: string;
   title?: string;
   onClose?: () => void;
@@ -15,7 +14,6 @@ interface WindowProps {
 
 const Window: React.FC<WindowProps> = ({
   src,
-  children,
   className = "",
   title = "Window",
   onClose,
@@ -234,17 +232,13 @@ const Window: React.FC<WindowProps> = ({
 
       {/* Content Area */}
       <div className="flex-1 overflow-hidden relative">
-        <div className="iframe-overlay absolute inset-0 z-50 bg-transparent hidden" />
+        <div className={`iframe-overlay absolute inset-0 bg-transparent hidden z-${(zIndex || 10) + 1}`} />
 
-        {src ? (
-          <iframe
-            src={src}
-            className="w-full h-full border-none"
-            title="Window Content"
-          />
-        ) : (
-          <div className="p-4 h-full overflow-auto">{children}</div>
-        )}
+        <iframe
+          src={src}
+          className="w-full h-full border-none"
+          title="Window Content"
+        />
       </div>
     </div>
   );

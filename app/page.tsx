@@ -62,16 +62,41 @@ export default function Home() {
     openWindow(windowConfig);
   }, [openWindow]);
 
+  const openImage = useCallback((filename: string, imagePath: string) => {
+    const id = `image-${Date.now()}`;
+    const params = new URLSearchParams({
+      path: imagePath,
+      filename: filename,
+    });
+
+    // Use smaller window size for ico files
+    const isIcoFile = filename.toLowerCase().endsWith('.ico');
+    const className = isIcoFile
+      ? 'w-[40vw] h-[40vh] max-w-100 max-h-100'
+      : 'w-[95vw] h-[85vh] max-w-225 max-h-175';
+
+    const windowConfig: WindowItem = {
+      id,
+      title: filename,
+      src: `/image-viewer?${params.toString()}`,
+      className,
+      type: 'file'
+    };
+    openWindow(windowConfig);
+  }, [openWindow]);
+
   // Listen for file open messages from Files window
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.data.type === 'openFile') {
         openFile(event.data.filename, event.data.content, event.data.totalLines, event.data.totalCharacters);
+      } else if (event.data.type === 'openImage') {
+        openImage(event.data.filename, event.data.imagePath);
       }
     };
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [openFile]);
+  }, [openFile, openImage]);
 
   const bringToFront = (id: string) => {
     setZIndices((prev) => {

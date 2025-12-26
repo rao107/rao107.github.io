@@ -23,7 +23,7 @@ export default function Files() {
 
   // Helper function to check if a file is an image
   const isImageFile = (filename: string): boolean => {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.avif', '.ico', '.gif', '.svg', '.webp'];
+    const imageExtensions = ['.jpg', '.png', '.ico'];
     return imageExtensions.some(ext => filename.toLowerCase().endsWith(ext));
   };
 
@@ -46,15 +46,24 @@ export default function Files() {
   const handleItemClick = (item: FileItem) => {
     if (item.type === "folder") {
       setCurrentPath([...currentPath, item.name]);
-    } else if (item.type === "file" && !isImageFile(item.name)) {
-      // Send message to parent window to open file in notepad
-      window.parent.postMessage({
-        type: 'openFile',
-        filename: item.name,
-        content: item.content || '',
-        totalLines: item.totalLines,
-        totalCharacters: item.totalCharacters
-      }, '*');
+    } else if (item.type === "file") {
+      if (isImageFile(item.name)) {
+        // Send message to parent window to open image viewer
+        window.parent.postMessage({
+          type: 'openImage',
+          filename: item.name,
+          imagePath: item.path
+        }, '*');
+      } else {
+        // Send message to parent window to open file in notepad
+        window.parent.postMessage({
+          type: 'openFile',
+          filename: item.name,
+          content: item.content || '',
+          totalLines: item.totalLines,
+          totalCharacters: item.totalCharacters
+        }, '*');
+      }
     }
   };
 

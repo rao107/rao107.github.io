@@ -13,7 +13,7 @@ export default function About() {
       <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-slate-50 dark:bg-slate-800 relative overflow-hidden">
         <div className="relative w-64 h-64 md:w-96 md:h-96">
           <Image
-            src="/pfp.jpg"
+            src="/assets/pfp.jpg"
             alt="Anirudh Rao"
             fill
             className="object-cover rounded-full shadow-xl"
@@ -44,7 +44,7 @@ export default function About() {
             </button>
           </div>
 
-          <div className="relative min-h-50">
+          <div className="relative min-h-35">
             <div
               className={`absolute inset-0 overflow-y-auto transition-all duration-200 ${
                 showBlurb
@@ -53,7 +53,16 @@ export default function About() {
               }`}
             >
               <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed text-justify">
-                I genuinely have no idea what to put here. I&apos;ll figure something out later though.
+                Hey! I&apos;m Anirudh. I&apos;m a software engineer at {' '}
+                <Link
+                  href="https://jiffy.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-slate-900 dark:hover:decoration-slate-100 underline-offset-4"
+                >
+                  Jiffy.ai
+                </Link>.
+                I build things mostly for the web. In my free time, I really enjoy contributing to Wikipedia and open source projects. I&apos;m always open to chatting.
               </p>
             </div>
 

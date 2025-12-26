@@ -1,12 +1,13 @@
 ---
 title: "Finding mistakes using Lean"
-date:  2024-03-28 18:44:54
+date: 2024-03-28 18:44:54
 ---
 
 ### This blog post may have been changed since its original publication during a blog migration.
+
 <br/>
 
-*TL;DR:* The definition of a set's complement in Mendelson's book was defined differently than the definition found in Mathlib causing headaches and pain. Below is how I found out about the apparent mistake and the steps to find its source.
+_TL;DR:_ The definition of a set's complement in Mendelson's book was defined differently than the definition found in Mathlib causing headaches and pain. Below is how I found out about the apparent mistake and the steps to find its source.
 <br/>
 
 I picked up a book on topology called ["Introduction to Topology" by Bert Mendelson](https://archive.org/details/introduction-to-topology-by-mendelson-bert/), and it seems to ask me to prove something that isn't always true?
@@ -25,7 +26,7 @@ So what do you do when a problem asks you to prove something that isn't true?
 
 My answer was to prove that the statement holds if and only if another condition. After talking with my friend Bennett about this, we decided that the statement should hold when either A is a universal set or B is a universal set. From that, I spent some time proving this proposition and it worked really well. Plus, it has the added benefit that anyone else can see that the code compiles and that I can rigorously show my work to anyone without them needing to examine each statement carefully. It's super nice!
 
-It also provides some cool insight about when the problem is actually true to understand what the author's intentions were behind the problem. The exercise is in fact very similar to a theorem that *is* always true. In the Mathlib library for Lean, its name is `Set.compl_prod_eq_union` and it looks like this: `(s ×ˢ t)ᶜ = sᶜ ×ˢ Set.univ ∪ Set.univ ×ˢ tᶜ`
+It also provides some cool insight about when the problem is actually true to understand what the author's intentions were behind the problem. The exercise is in fact very similar to a theorem that _is_ always true. In the Mathlib library for Lean, its name is `Set.compl_prod_eq_union` and it looks like this: `(s ×ˢ t)ᶜ = sᶜ ×ˢ Set.univ ∪ Set.univ ×ˢ tᶜ`
 
 The only difference between the exercise in the book and the above theorem is the universal set replacing A and B.
 
@@ -37,7 +38,7 @@ What if A and B were "implied" to be universal sets?
 
 Oh my god.
 
-When Mendelson let X ⊂ A and Y ⊂ B, he might have been defining the sets that the reader would have to take the complement of. That means C(X) and C(Y) *actually means* A - X and B - Y respectively. Instead of creating a specific symbol to denote the universal set, Mendelson decides to use other sets instead. When defining the complement he says that the complement is always implied to be a complement of another set. Again, this is more like the definition of set minus. However, in this exercise it was *not* obvious to me what sets we were taking the complement of. Mendelson could have used other syntaxes for the complement that would *explicitly* show what superset we take the complement of like the ones he introduces in chapter 1 section 3.
+When Mendelson let X ⊂ A and Y ⊂ B, he might have been defining the sets that the reader would have to take the complement of. That means C(X) and C(Y) _actually means_ A - X and B - Y respectively. Instead of creating a specific symbol to denote the universal set, Mendelson decides to use other sets instead. When defining the complement he says that the complement is always implied to be a complement of another set. Again, this is more like the definition of set minus. However, in this exercise it was _not_ obvious to me what sets we were taking the complement of. Mendelson could have used other syntaxes for the complement that would _explicitly_ show what superset we take the complement of like the ones he introduces in chapter 1 section 3.
 
 This is a consistent problem I've encountered when attempting to formalize problems from this book.
 

@@ -1,10 +1,11 @@
 ---
 title: "Hoosier Sudoku"
-date:  2022-05-14 20:25:27 -0700
+date: 2022-05-14 20:25:27 -0700
 thumbnail: "hoosier.png"
 ---
 
 ### This blog post may have been changed since its original publication during a blog migration.
+
 <br/>
 
 ~~Click here to solve this puzzle online.~~ Link no longer works :(

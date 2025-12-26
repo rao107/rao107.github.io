@@ -5,6 +5,7 @@ thumbnail: "indiana-sudoku-1.png"
 ---
 
 ### This blog post may have been changed since its original publication during a blog migration.
+
 <br/>
 
 [Click here][sudoku-link] to solve the puzzle online

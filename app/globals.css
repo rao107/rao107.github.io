@@ -1,4 +1,5 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @layer base {
   *,
@@ -18,4 +19,39 @@
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-neutral-400, currentColor);
   border-radius: 10px;
+}
+
+/* Global iframe protection during dragging */
+body.window-dragging .iframe-overlay {
+  display: block !important;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 300ms ease-in;
+}
+
+/* Button text transition */
+@keyframes buttonSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-buttonSlide {
+  animation: buttonSlide 200ms ease-out;
 }

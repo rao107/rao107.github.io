@@ -56,7 +56,7 @@ export default function Home() {
       id,
       title: filename,
       src: `/notepad?${params.toString()}`,
-      className: 'w-[95vw] h-[80vh] max-w-200 max-h-150',
+      className: 'w-[70vw] h-[60vh] max-w-150 max-h-100',
       type: 'file'
     };
     openWindow(windowConfig);
@@ -72,8 +72,8 @@ export default function Home() {
     // Use smaller window size for ico files
     const isIcoFile = filename.toLowerCase().endsWith('.ico');
     const className = isIcoFile
-      ? 'w-[40vw] h-[40vh] max-w-100 max-h-100'
-      : 'w-[95vw] h-[85vh] max-w-225 max-h-175';
+      ? 'w-[30vw] h-[30vh] max-w-75 max-h-75'
+      : 'w-[60vw] h-[60vh] max-w-150 max-h-125';
 
     const windowConfig: WindowItem = {
       id,
@@ -117,7 +117,7 @@ export default function Home() {
   return (
     <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900 overflow-hidden">
       <FloatingDots />
-      {/* Desktop Shortcuts Area */}
+      {/* Desktop Shortcuts Area - Top Left */}
       <div className="absolute top-4 left-4 flex flex-col gap-4 w-auto">
         <Shortcut
           label="My Bio"
@@ -136,6 +136,20 @@ export default function Home() {
             title: 'Files',
             src: '/files',
             className: 'w-[95vw] h-[80vh] max-w-200 max-h-150',
+            type: 'app'
+          })}
+        />
+      </div>
+
+      {/* Now Playing - Bottom Right */}
+      <div className="absolute bottom-4 right-4">
+        <Shortcut
+          label="Now Playing"
+          onClick={() => openWindow({
+            id: 'music',
+            title: 'Now Playing',
+            src: 'https://open.spotify.com/embed/track/3pkXNBtkg8E2xRAKrnu43s',
+            className: 'w-full h-[187px] max-w-100 max-h-50',
             type: 'app'
           })}
         />

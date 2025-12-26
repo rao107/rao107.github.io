@@ -43,7 +43,7 @@ function isImageFile(filename: string): boolean {
 }
 
 // Function to read first N lines of a text file and get metadata
-function readFileContent(filePath: string, maxLines: number = 50): { content: string; totalLines: number; totalCharacters: number } | undefined {
+function readFileContent(filePath: string, maxLines: number = 25): { content: string; totalLines: number; totalCharacters: number } | undefined {
   try {
     const stats = statSync(filePath);
     // Skip files larger than 10MB to avoid memory issues

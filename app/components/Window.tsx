@@ -170,6 +170,14 @@ const Window: React.FC<WindowProps> = ({
     }
   })() : false;
 
+  // Convert Spotify embed URL to regular Spotify URL
+  const getDisplayUrl = (url: string) => {
+    if (url.includes('open.spotify.com/embed/')) {
+      return url.replace('/embed/', '/');
+    }
+    return url;
+  };
+
   return (
     <div
       ref={windowRef}
@@ -198,7 +206,7 @@ const Window: React.FC<WindowProps> = ({
       >
         {isExternalUrl ? (
           <a
-            href={src}
+            href={getDisplayUrl(src)}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}

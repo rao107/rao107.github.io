@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync, statSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync, statSync, mkdirSync } from 'fs';
 import { join, extname } from 'path';
 
 interface FileItem {
@@ -144,7 +144,10 @@ function countItems(items: FileItem[]): { folders: number; files: number } {
 const rootDir = process.cwd();
 const fileSystem = buildFileTree(rootDir);
 
-const outputPath = join(rootDir, 'generated', 'filesData.json');
+const outputDir = join(rootDir, 'generated');
+mkdirSync(outputDir, { recursive: true });
+
+const outputPath = join(outputDir, 'filesData.json');
 writeFileSync(outputPath, JSON.stringify(fileSystem, null, 2));
 
 const counts = countItems(fileSystem);

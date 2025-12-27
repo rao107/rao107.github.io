@@ -21,7 +21,6 @@ const Window: React.FC<WindowProps> = ({
   zIndex,
   onFocus,
 }) => {
-  /* State */
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -34,6 +33,29 @@ const Window: React.FC<WindowProps> = ({
       setPosition({ x: rect.left, y: rect.top });
       setIsPositioned(true);
     }
+  }, [isPositioned]);
+
+  // Constrain window position on viewport resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (!windowRef.current || !isPositioned) return;
+
+      const rect = windowRef.current.getBoundingClientRect();
+
+      // Allow 50% of the window to be off-screen on left/right/bottom
+      const minX = -rect.width / 2;
+      const maxX = window.innerWidth - (rect.width / 2);
+      const maxY = window.innerHeight - (rect.height / 2);
+      const minY = 0;
+
+      setPosition(prev => ({
+        x: Math.max(minX, Math.min(prev.x, maxX)),
+        y: Math.max(minY, Math.min(prev.y, maxY)),
+      }));
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [isPositioned]);
 
   useEffect(() => {
@@ -49,8 +71,6 @@ const Window: React.FC<WindowProps> = ({
         const minX = -rect.width / 2;
         const maxX = window.innerWidth - (rect.width / 2);
         const maxY = window.innerHeight - (rect.height / 2);
-
-        // Strict top boundary (cannot go above 0)
         const minY = 0;
 
         newX = Math.max(minX, Math.min(newX, maxX));
@@ -76,8 +96,6 @@ const Window: React.FC<WindowProps> = ({
         const minX = -rect.width / 2;
         const maxX = window.innerWidth - (rect.width / 2);
         const maxY = window.innerHeight - (rect.height / 2);
-
-        // Strict top boundary (cannot go above 0)
         const minY = 0;
 
         newX = Math.max(minX, Math.min(newX, maxX));

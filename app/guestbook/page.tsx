@@ -16,6 +16,11 @@ export default function Guestbook() {
   const fileContents = readFileSync(filePath, 'utf8');
   const entries: GuestbookEntry[] = JSON.parse(fileContents);
 
+  // Sort by date, most recent first
+  const sortedEntries = entries.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
   return (
     <div className="h-screen w-screen bg-white dark:bg-slate-900 overflow-hidden flex flex-col">
       <PageHeader
@@ -28,7 +33,7 @@ export default function Guestbook() {
 
         {/* Entries List */}
         <div className="space-y-4">
-          {entries.map((entry) => (
+          {sortedEntries.map((entry) => (
             <div
               key={entry.id}
               className="bg-slate-50 dark:bg-slate-800 rounded-lg p-5 border border-slate-200 dark:border-slate-700"

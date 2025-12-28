@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Just another website",
     description: "Made by Anirudh Rao",
     url: "https://rao107.github.io",
-    siteName: "My website",
+    siteName: "rao107.github.io",
     images: [
       {
         url: "https://rao107.github.io/og-image.png",

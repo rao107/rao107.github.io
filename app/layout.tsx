@@ -4,6 +4,21 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Anirudh Rao",
   description: "Anirudh Rao's website",
+  metadataBase: new URL("https://rao107.github.io"),
+  openGraph: {
+    title: "Anirudh Rao",
+    description: "Anirudh Rao's website",
+    url: "https://rao107.github.io",
+    siteName: "Anirudh Rao",
+    images: [
+      {
+        url: "https://rao107.github.io/og-image.png",
+        width: 1200,
+        height: 630,
+      }
+    ],
+    type: "website",
+  }
 };
 
 export default function RootLayout({

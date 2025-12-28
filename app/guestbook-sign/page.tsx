@@ -76,7 +76,7 @@ export default function GuestbookSign() {
               label="Website"
               value={website}
               onChange={(e) => setWebsite(e.target.value)}
-              placeholder="Link to your website..."
+              placeholder="Website or social media link"
               type="url"
               optional
             />

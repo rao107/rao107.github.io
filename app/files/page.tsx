@@ -5,6 +5,7 @@ import fileSystemData from "../../generated/filesData.json";
 import FolderIcon from "./FolderIcon";
 import FileIcon from "./FileIcon";
 import ImageIcon from "./ImageIcon";
+import PageHeader from "../components/PageHeader";
 
 interface FileItem {
   name: string;
@@ -77,8 +78,7 @@ export default function Files() {
   return (
     <div className="h-screen w-screen bg-white dark:bg-slate-900 overflow-hidden">
       <div className="h-full flex flex-col">
-        {/* Header with path and back button */}
-        <div className="bg-slate-100 dark:bg-slate-800 border-b border-slate-300 dark:border-slate-700 px-6 py-4">
+        <PageHeader title="" className="px-6 py-4">
           <div className="flex items-center gap-4">
             <button
               onClick={handleBackClick}
@@ -97,7 +97,7 @@ export default function Files() {
               </p>
             </div>
           </div>
-        </div>
+        </PageHeader>
 
         {/* File Grid */}
         <div className="flex-1 overflow-y-auto p-8">

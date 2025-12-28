@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
+import AnimatedLink from "../components/AnimatedLink";
 
 export default function About() {
   const [showBlurb, setShowBlurb] = useState(false);
@@ -34,14 +34,11 @@ export default function About() {
               Software Engineer
             </p>
 
-            <button
-              onClick={() => setShowBlurb(!showBlurb)}
-              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-slate-900 dark:hover:decoration-slate-100 underline-offset-4"
-            >
+            <AnimatedLink onClick={() => setShowBlurb(!showBlurb)}>
               <span className="inline-block animate-buttonSlide" key={showBlurb ? "back" : "about"}>
                 {showBlurb ? "← Back" : "About →"}
               </span>
-            </button>
+            </AnimatedLink>
           </div>
 
           <div className="relative min-h-35">
@@ -54,14 +51,9 @@ export default function About() {
             >
               <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed text-justify">
                 Hey! I&apos;m Anirudh. I&apos;m a software engineer at {' '}
-                <Link
-                  href="https://jiffy.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-slate-900 dark:hover:decoration-slate-100 underline-offset-4"
-                >
+                <AnimatedLink href="https://jiffy.ai" external>
                   Jiffy.ai
-                </Link>.
+                </AnimatedLink>.
                 I build things mostly for the web. In my free time, I really enjoy contributing to Wikipedia and open source projects. I&apos;m always open to chatting.
               </p>
             </div>
@@ -73,30 +65,17 @@ export default function About() {
                   : 'opacity-0 translate-y-3 pointer-events-none'
               }`}
             >
-              <Link
-                href="https://www.github.com/rao107"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-slate-900 dark:hover:decoration-slate-100 underline-offset-4"
-              >
+              <AnimatedLink href="https://www.github.com/rao107" external className="w-fit">
                 GitHub
-              </Link>
+              </AnimatedLink>
 
-              <Link
-                href="https://www.linkedin.com/in/rao107107"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-slate-600 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-blue-700 dark:hover:decoration-blue-400 underline-offset-4"
-              >
+              <AnimatedLink href="https://www.linkedin.com/in/rao107107" external hoverColor="blue" className="w-fit">
                 LinkedIn
-              </Link>
+              </AnimatedLink>
 
-              <Link
-                href="mailto:proanirudhrao@gmail.com"
-                className="w-fit text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 underline decoration-2 decoration-transparent hover:decoration-red-600 dark:hover:decoration-red-400 underline-offset-4"
-              >
+              <AnimatedLink href="mailto:proanirudhrao@gmail.com" hoverColor="red" className="w-fit">
                 Email
-              </Link>
+              </AnimatedLink>
             </div>
           </div>
         </div>

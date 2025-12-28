@@ -92,11 +92,13 @@ export default function Home() {
         openFile(event.data.filename, event.data.content, event.data.totalLines, event.data.totalCharacters);
       } else if (event.data.type === 'openImage') {
         openImage(event.data.filename, event.data.imagePath);
+      } else if (event.data.type === 'openWindow') {
+        openWindow(event.data.windowConfig);
       }
     };
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [openFile, openImage]);
+  }, [openFile, openImage, openWindow]);
 
   const bringToFront = (id: string) => {
     setZIndices((prev) => {
@@ -139,6 +141,16 @@ export default function Home() {
             type: 'app'
           })}
         />
+        <Shortcut
+          label="Guestbook"
+          onClick={() => openWindow({
+            id: 'guestbook',
+            title: 'Guestbook',
+            src: '/guestbook',
+            className: 'w-[95vw] h-[85vh] max-w-200 max-h-175',
+            type: 'app'
+          })}
+        />
       </div>
 
       {/* Now Playing - Bottom Right */}
@@ -149,7 +161,7 @@ export default function Home() {
             id: 'music',
             title: 'Now Playing',
             src: 'https://open.spotify.com/embed/track/3pkXNBtkg8E2xRAKrnu43s',
-            className: 'w-full h-[187px] max-w-100 max-h-50',
+            className: 'w-100 h-[187px]',
             type: 'app'
           })}
         />

@@ -25,7 +25,7 @@ export default function GuestbookSign() {
       return;
     }
 
-    const date = new Date().toISOString().split('T')[0];
+    const date = new Date().toISOString();
 
     let body = `**Name:** ${name}\n\n**Date:** ${date}\n\n`;
     if (website.trim()) {

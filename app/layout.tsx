@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   description: "Anirudh Rao's website",
   metadataBase: new URL("https://rao107.github.io"),
   openGraph: {
-    title: "Anirudh Rao",
-    description: "Anirudh Rao's website",
+    title: "Just another website",
+    description: "Made by Anirudh Rao",
     url: "https://rao107.github.io",
-    siteName: "Anirudh Rao",
+    siteName: "My website",
     images: [
       {
         url: "https://rao107.github.io/og-image.png",

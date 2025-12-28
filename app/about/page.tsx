@@ -69,7 +69,7 @@ export default function About() {
                 GitHub
               </AnimatedLink>
 
-              <AnimatedLink href="https://www.linkedin.com/in/rao107107" external hoverColor="blue" className="w-fit">
+              <AnimatedLink href="https://www.linkedin.com/in/anirudh-rao-107107/" external hoverColor="blue" className="w-fit">
                 LinkedIn
               </AnimatedLink>
 

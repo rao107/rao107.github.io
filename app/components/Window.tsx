@@ -242,7 +242,7 @@ const Window: React.FC<WindowProps> = ({
           </span>
         )}
         <div className="ml-auto flex items-center">
-          {/* Close button (Diamond) with distinct clickable area */}
+          {/* Close button (X) with distinct clickable area */}
           <button
             onClick={(e) => {
               e.stopPropagation(); // Prevent drag start when clicking close
@@ -251,7 +251,9 @@ const Window: React.FC<WindowProps> = ({
             className="w-6 h-6 flex items-center justify-center cursor-pointer bg-white/20 dark:bg-white/10 border border-white/30 dark:border-white/20 hover:bg-slate-500/20 hover:border-slate-500/50 transition-all rounded-sm backdrop-blur-sm shadow-sm group"
             aria-label="Close"
           >
-            <div className="w-2 h-2 bg-slate-800/80 dark:bg-slate-200/80 rotate-45 group-hover:bg-slate-900 dark:group-hover:bg-white"></div>
+            <svg className="w-3 h-3 stroke-slate-800/80 dark:stroke-slate-200/80 group-hover:stroke-slate-900 dark:group-hover:stroke-white" viewBox="0 0 12 12" fill="none">
+              <path d="M2 2L10 10M10 2L2 10" strokeWidth="2" strokeLinecap="round" />
+            </svg>
           </button>
         </div>
       </div>

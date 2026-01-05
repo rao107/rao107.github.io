@@ -132,12 +132,12 @@ export default function Home() {
           })}
         />
         <Shortcut
-          label="Files"
+          label="Blog"
           onClick={() => openWindow({
-            id: 'files',
-            title: 'Files',
-            src: '/files',
-            className: 'w-[95vw] h-[80vh] max-w-200 max-h-150',
+            id: 'blog',
+            title: 'Blog',
+            src: '/blog',
+            className: 'w-[95vw] h-[85vh] max-w-200 max-h-175',
             type: 'app'
           })}
         />
@@ -148,6 +148,16 @@ export default function Home() {
             title: 'Guestbook',
             src: '/guestbook',
             className: 'w-[95vw] h-[85vh] max-w-200 max-h-175',
+            type: 'app'
+          })}
+        />
+        <Shortcut
+          label="Files"
+          onClick={() => openWindow({
+            id: 'files',
+            title: 'Files',
+            src: '/files',
+            className: 'w-[95vw] h-[80vh] max-w-200 max-h-150',
             type: 'app'
           })}
         />

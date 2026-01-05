@@ -41,7 +41,7 @@ export default function About() {
             </AnimatedLink>
           </div>
 
-          <div className="relative min-h-35">
+          <div className="relative min-h-36">
             <div
               className={`absolute inset-0 overflow-y-auto transition-all duration-200 ${
                 showBlurb
@@ -49,12 +49,12 @@ export default function About() {
                   : 'opacity-0 translate-y-3 pointer-events-none'
               }`}
             >
-              <p className="text-slate-700 dark:text-slate-300 text-base leading-relaxed text-justify">
+              <p className="text-slate-700 dark:text-slate-300 text-base leading-normal text-justify">
                 Hey! I&apos;m Anirudh. I&apos;m a software engineer at {' '}
                 <AnimatedLink href="https://jiffy.ai" external>
                   Jiffy.ai
                 </AnimatedLink>.
-                I build things mostly for the web. In my free time, I really enjoy contributing to Wikipedia and open source projects. I&apos;m always open to chatting.
+                I build things mostly for the web. In my free time, I really enjoy contributing to Wikipedia and open source projects. I&apos;m always open to chatting so feel free to reach out to me.
               </p>
             </div>
 

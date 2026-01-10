@@ -73,7 +73,7 @@ export default function About() {
                 LinkedIn
               </AnimatedLink>
 
-              <AnimatedLink href="mailto:proanirudhrao@gmail.com" hoverColor="red" className="w-fit">
+              <AnimatedLink href="mailto:hello@anirudhra0.com" hoverColor="red" className="w-fit">
                 Email
               </AnimatedLink>
             </div>

@@ -17,7 +17,7 @@ export default function Home() {
   const [windows, setWindows] = useState<WindowItem[]>([
     {
       id: 'bio',
-      title: 'About Me',
+      title: 'Drag Me!',
       src: '/about',
       className: 'w-[95vw] h-[85vh] max-w-225 max-h-175',
       type: 'app'
